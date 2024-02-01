@@ -51,3 +51,4 @@ Get-ADDomain
 # The Get-ADDomain cmdlet gets the Active Directory domain specified by the parameters.
 # Any computers joined the domain?
 Get-ADComputer -Filter * | Select-Object DNSHostName
+#
