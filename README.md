@@ -6,11 +6,13 @@ This repository dives deep into the essentials of securing foundational services
 
 # Core Topics Covered
 
--Private and Public Cloud Solutions: Understanding and deploying secure, scalable cloud environments using OpenStack and Active Directory.
+-Private and Public Cloud Solutions: Understanding and deploying secure, scalable cloud environments using OpenStack, Active Directory and Microsoft Azure. 
 
 -Security Challenges: Tackling unique security concerns inherent to cloud solutions.
 
 -Administration Tools: Utilizing industry-standard tools to manage complex infrastructures efficiently.
+
+-Azure Identity Management: Utilize Microsoft Entra for managing identities in Azure, ensuring secure and efficient access controls within cloud environments.
 
 -Virtual Machine Management: Hands-on configuration of VMs through RDP and PowerShell, focusing on automation and centralized authentication systems.
 
@@ -20,7 +22,7 @@ This repository dives deep into the essentials of securing foundational services
 
 # Learning Outcomes
 
--Deploy and Manage Virtual Environments: From setting up VMs in OpenStack to configuring Active Directory using PowerShell, students will acquire the competencies to manage and scale IT infrastructures.
+-Deploy and Manage Virtual Environments: From setting up VMs in OpenStack and Microsoft Azure to configuring Active Directory using PowerShell, students will acquire the competencies to manage and scale IT infrastructures.
 
 -Security and Compliance: Learn to navigate and implement security protocols essential for protecting data and ensuring compliance in corporate environments.
 
