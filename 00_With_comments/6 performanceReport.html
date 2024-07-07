@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Performance Report for DC1 and SRV1</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawCharts);
+
+        function drawCharts() {
+            var processorTimeDataDC1 = [["04/10/2024 12:49:04", 0.0401238942688398], ["04/10/2024 13:49:09", 85.1709130012244], ["04/10/2024 14:49:21", 0], ["04/10/2024 15:49:31", 7.04381767585023], ["04/10/2024 16:49:42", 0.00291437660007166], ["04/10/2024 17:49:47", 7.81308999622402], ["04/10/2024 18:49:57", 0.0047456209339769], ["04/10/2024 19:50:02", 0.818383597181216], ["04/10/2024 20:50:06", 0.00827008523109907], ["04/10/2024 21:50:11", 0], ["04/10/2024 22:50:16", 6.93514500076642], ["04/10/2024 23:50:21", 0.781547655357029], ["04/11/2024 00:50:25", 0.0309304301249202], ["04/11/2024 01:50:30", 0.014847795102424], ["04/11/2024 02:50:36", 0.0164572911298788], ["04/11/2024 03:50:41", 0.00786938067973697], ["04/11/2024 04:50:46", 6.15269111004443], ["04/11/2024 05:50:51", 0.0252236360766211], ["04/11/2024 06:50:56", 0.769572732549351], ["04/11/2024 07:51:01", 7.04330648314914], ["04/11/2024 08:51:05", 0], ["04/11/2024 09:51:10", 0.00737945539619478], ["04/11/2024 10:51:15", 6.88984375961882], ["04/11/2024 11:51:20", 0.774164583077963]];
+            var memoryDataDC1 = [];
+            var diskDataDC1 = [];
+
+            var processorTimeDataSRV1 = [["04/10/2024 12:49:07", 0.0134874114211758], ["04/10/2024 13:49:16", 35.1699032183822], ["04/10/2024 14:49:28", 85.9663055612051], ["04/10/2024 15:49:39", 45.2605167653931], ["04/10/2024 16:49:44", 25.8381395631411], ["04/10/2024 17:49:54", 18.8185982844496], ["04/10/2024 18:49:59", 13.367665753411], ["04/10/2024 19:50:04", 8.68803873120616], ["04/10/2024 20:50:09", 0.0974349716721279], ["04/10/2024 21:50:13", 21.8793122619631], ["04/10/2024 22:50:18", 18.0048688552693], ["04/10/2024 23:50:23", 39.0675756709466], ["04/11/2024 00:50:28", 17.2747833760599], ["04/11/2024 01:50:33", 5.56322455016002], ["04/11/2024 02:50:38", 25.9306700592894], ["04/11/2024 03:50:43", 20.3338983149126], ["04/11/2024 04:50:48", 14.1931122599305], ["04/11/2024 05:50:53", 28.9794863536721], ["04/11/2024 06:50:58", 17.2728000159036], ["04/11/2024 07:51:03", 27.4236783030848], ["04/11/2024 08:51:08", 24.2437495626443], ["04/11/2024 09:51:13", 0.880924142682116], ["04/11/2024 10:51:18", 22.7208708078305], ["04/11/2024 11:51:22", 42.1955290410162]];
+            var memoryDataSRV1 = [];
+            var diskDataSRV1 = [];
+
+            drawChart('processorTime_chart_dc1', 'DC1 - % Processor Time', processorTimeDataDC1);
+            drawChart('memory_chart_dc1', 'DC1 - % Committed Bytes In Use', memoryDataDC1);
+            drawChart('disk_chart_dc1', 'DC1 - Disk Transfers/sec', diskDataDC1);
+
+            drawChart('processorTime_chart_srv1', 'SRV1 - % Processor Time', processorTimeDataSRV1);
+            drawChart('memory_chart_srv1', 'SRV1 - % Committed Bytes In Use', memoryDataSRV1);
+            drawChart('disk_chart_srv1', 'SRV1 - Disk Transfers/sec', diskDataSRV1);
+        }
+
+        function drawChart(elementId, title, dataRows) {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Time');
+            data.addColumn('number', title);
+            data.addRows(dataRows);
+
+            var options = {
+                title: title,
+                curveType: 'function',
+                legend: { position: 'bottom' },
+                hAxis: { title: 'Time' },
+                vAxis: { title: 'Value' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById(elementId));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <h1>Performance Report for DC1 and SRV1</h1>
+    <div id="processorTime_chart_dc1" style="width: 700px; height: 300px;"></div>
+    <div id="memory_chart_dc1" style="width: 700px; height: 300px;"></div>
+    <div id="disk_chart_dc1" style="width: 700px; height: 300px;"></div>
+    <div id="processorTime_chart_srv1" style="width: 700px; height: 300px;"></div>
+    <div id="memory_chart_srv1" style="width: 700px; height: 300px;"></div>
+    <div id="disk_chart_srv1" style="width: 700px; height: 300px;"></div>
+</body>
+</html>
